@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 
         features = "src/test/resources/features",
         glue = "stepdefinitions",
-        tags = "@ilk",
+        tags = "@wip",
 
         dryRun = false
 
@@ -29,4 +29,16 @@ public class Runner {
         - feature dosyalarina ait Java method'larinin nerede oldugunu
         - ve bu feature dosyalari icerisinde olusturulan
           Scenario veya Feature'larin hangilerinin calistirilacagini belirler.
+           dryRun  :  default degeri olan "false" oldugunda
+                feature dosyasinda run tusuna bastigimiz gibi calistirir
+                stepdefiniton'i olusturulan adimlari calistirir
+                stepdefiniton'i olmayan ilk adimda, eksik adimlari bize raporlar
+                Ancak bu tur calistirmada gereksiz calistirilan adimlar olur
+                bunun yerine
+                "true" degerini verirseniz
+                testi calistirmayi denemez
+                sadece adimlari kontrol eder ve eksik adim VARSA kodlari olusturur
+                EKSIK ADIM YOKSA hic bir adimi calistirmadan TEST PASSED der
+                buradaki test passed "EKSIK ADIM YOK" anlamina gelmektedir
+
  */

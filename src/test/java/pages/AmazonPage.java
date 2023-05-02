@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -18,22 +19,29 @@ public class AmazonPage {
         icerisinde driver'i bu class'a tanitiyoruz.
      */
 
-    public AmazonPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public AmazonPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(id="twotabsearchtextbox")
+    @FindBy(id = "twotabsearchtextbox")
     public WebElement aramaKutusu;
 
     @FindBy(xpath = "//h1[@class='a-size-base s-desktop-toolbar a-text-normal']")
     public WebElement aramaSonucElementi;
 
     @FindBy(xpath = "(//img[@class='s-image'])[2]")
-    public WebElement ilkUrun;
+    public WebElement ikinciUrun;
 
     @FindBy(xpath = "//span[@id='productTitle']")
     public WebElement ilkUrunIsimElementi;
 
+    public WebElement isteneUrunElementi(int index) {
+        String dinamikXpath="(//img[@class='s-image'])["+index+"]";
+        WebElement istenenUrun=Driver.getDriver().findElement(By.xpath(dinamikXpath));
+
+        return istenenUrun;
+
+    }
 
 
 

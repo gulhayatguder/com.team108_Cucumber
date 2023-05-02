@@ -12,7 +12,7 @@ Feature: US1001 Kullanici Amazon sayfasinda arama yapar
     Given kullanici Amazon anasayfaya gider
     When arama kutusuna Java yazar ve enter tusuna basar
     Then arama sonuclarinin Java icerdigini test eder
-    And sayfayi kapatir
+    And   sayfayi kapatir
 
   Scenario: TC03 kullanici Amazonda Apple aratir
     Given kullanici Amazon anasayfaya gider
